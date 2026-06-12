@@ -1,212 +1,256 @@
-/* RESET */
-*{
+/* ====================== RESET E GERAIS ====================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #7b00ff;
-    color: #353535;
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #0a0f1c 0%, #111827 100%);
+    color: #e2e8f0;
+    line-height: 1.7;
+    min-height: 100vh;
 }
 
-/* MENU SUPERIOR */
-.topo{
-    position: fixed;
-    top: 0;
-    width: 100%;
-
+/* ====================== HEADER ====================== */
+.topo {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 20px 60px;
-
-    background-color: rgba(255,255,255,0.9);
-
-    backdrop-filter: blur(10px);
-
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-
+    position: sticky;
+    top: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* LOGO */
-.logo-area{
+.logo-area {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
 }
 
-.logo-area img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.logo-area img {
+    height: 72px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
+    transition: transform 0.4s ease;
 }
 
-.logo-area span{
-    font-size: 22px;
-    font-weight: bold;
-}
-
-/* MENU */
-nav{
-    display: flex;
-    gap: 20px;
-}
-
-nav a{
-    text-decoration: none;
-    color: black;
-
-    font-weight: bold;
-
-    padding: 10px 18px;
-
-    border-radius: 10px;
-
-    transition: 0.3s;
-}
-
-/* HOVER MENU */
-nav a:hover{
-    background-color: #f4df63;
+.logo-area img:hover {
     transform: scale(1.05);
 }
 
-/* ÁREA PRINCIPAL */
-.main{
-    min-height: 100vh;
+.logo-area span {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #60a5fa, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
 
+/* Menu */
+nav {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    padding: 140px 80px 60px;
+    gap: 10px;
 }
 
-/* TEXTO */
-.main-texto{
-    width: 45%;
-}
-
-.main-texto h1{
-    font-size: 60px;
-    line-height: 1.1;
-
-    margin-bottom: 20px;
-
-    font-weight: 900;
-}
-
-/* LINHA */
-.linha{
-    width: 120px;
-    height: 6px;
-
-    background-color: #000;
-
-    border-radius: 10px;
-
-    margin-bottom: 25px;
-}
-
-/* PARÁGRAFO */
-.main-texto p{
-    font-size: 20px;
-    line-height: 1.6;
-
-    margin-bottom: 35px;
-}
-
-/* BOTÃO */
-.botao{
-    display: inline-block;
-
+nav a {
+    color: #cbd5e1;
     text-decoration: none;
-
-    background-color: #f4df63;
-    color: black;
-
-    font-weight: bold;
-    font-size: 18px;
-
-    padding: 18px 35px;
-
-    border-radius: 15px;
-
-    transition: 0.3s;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.4s ease;
 }
 
-/* HOVER BOTÃO */
-.botao:hover{
-    transform: translateY(-5px) scale(1.05);
-
-    background-color: #ffe600;
-
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+nav a:hover {
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
 }
 
-/* IMAGEM */
-.main-imagem img{
+/* ====================== CONTEÚDO ====================== */
+.main, .pagina {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 5%;
+}
+
+/* Hero Section */
+.main-texto {
+    text-align: center;
+    padding: 110px 40px 90px;
+    background: linear-gradient(135deg, #1e2937 0%, #334155 100%);
+    border-radius: 28px;
+    margin-bottom: 70px;
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.main-texto::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
     width: 500px;
-
-    border-radius: 40px;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    z-index: 0;
 }
 
-/* CONTEÚDO */
-.conteudo{
-    padding: 80px;
+.main-texto h1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    background: linear-gradient(90deg, #93c5fd, #c4d0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.texto{
-    background-color: white;
-
-    padding: 40px;
-
-    border-radius: 25px;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.linha {
+    width: 130px;
+    height: 5px;
+    background: linear-gradient(90deg, #60a5fa, #818cf8);
+    margin: 28px auto;
+    border-radius: 10px;
 }
 
-.texto h2{
-    font-size: 40px;
-
-    margin-bottom: 20px;
+.main-texto p {
+    font-size: 1.28rem;
+    max-width: 720px;
+    margin: 0 auto 35px;
+    opacity: 0.9;
 }
 
-.texto p{
-    font-size: 20px;
-
-    line-height: 1.7;
+.botao {
+    display: inline-block;
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    color: white;
+    padding: 18px 46px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+    transition: all 0.4s ease;
 }
 
-/* RESPONSIVO */
-@media(max-width: 900px){
+.botao:hover {
+    transform: translateY(-6px) scale(1.06);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.5);
+}
 
-    .main{
+/* Imagem da Escola */
+.apresentacao {
+    text-align: center;
+    margin-top: -50px;
+}
+
+.apresentacao img {
+    width: 100%;
+    max-height: 560px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.6);
+    transition: all 0.5s ease;
+}
+
+.apresentacao img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 35px 70px -10px rgba(59, 130, 246, 0.3);
+}
+
+/* Cards */
+.professores, .calendario {
+    padding: 70px 20px;
+}
+
+.lista-professores, .lista-eventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.professor-card, .evento-card {
+    background: rgba(30, 41, 59, 0.75);
+    padding: 34px 26px;
+    border-radius: 22px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: all 0.4s ease;
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+.professor-card:hover, .evento-card:hover {
+    transform: translateY(-14px);
+    border-color: #60a5fa;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    background: rgba(30, 41, 59, 0.95);
+}
+
+.professor-card h3 {
+    color: #93c5fd;
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+.evento-card h3 {
+    color: #93c5fd;
+    margin-bottom: 14px;
+}
+
+/* Contato */
+.contato-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.info-item {
+    background: rgba(30, 41, 59, 0.7);
+    padding: 36px 30px;
+    border-radius: 22px;
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(8px);
+}
+
+.info-item:hover {
+    border-color: #60a5fa;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.info-item h3 {
+    color: #60a5fa;
+    margin-bottom: 14px;
+    font-size: 1.35rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .main-texto h1 {
+        font-size: 2.8rem;
+    }
+    .topo {
         flex-direction: column;
-        text-align: center;
+        gap: 22px;
+        padding: 18px 5%;
     }
-
-    .main-texto{
-        width: 100%;
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-    .main-imagem img{
-        width: 90%;
-        margin-top: 40px;
-    }
-
-    .topo{
-        flex-direction: column;
-        gap: 15px;
-    }
-
 }
